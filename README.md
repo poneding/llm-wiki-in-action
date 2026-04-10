@@ -8,9 +8,20 @@
 
 核心区别：
 
-```
-传统 RAG：每次提问 → 检索原文 → 重新拼凑 → 知识消失
-LLM Wiki：添加来源 → 提炼沉淀 → 持续积累 → 知识复利
+```mermaid
+flowchart LR
+    subgraph RAG["传统 RAG"]
+        direction LR
+        Q1["每次提问"] --> R["检索原文"] --> P["重新拼凑"] --> X["知识消失 ❌"]
+    end
+
+    subgraph WIKI["LLM Wiki"]
+        direction LR
+        S["添加来源"] --> E["提炼沉淀"] --> A["持续积累"] --> C["知识复利 ✅"]
+    end
+
+    style RAG fill:#fff0f0,stroke:#cc3333
+    style WIKI fill:#f0fff0,stroke:#33aa33
 ```
 
 ## 文档导航
